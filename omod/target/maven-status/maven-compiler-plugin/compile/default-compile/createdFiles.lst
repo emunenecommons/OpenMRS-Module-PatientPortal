@@ -1,0 +1,3 @@
+org/openmrs/module/patientportal/web/controller/PatientportalController.class
+org/openmrs/module/patientportal/fragment/controller/UsersFragmentController.class
+org/openmrs/module/patientportal/extension/html/AdminList.class
