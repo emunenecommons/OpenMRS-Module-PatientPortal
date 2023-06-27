@@ -10,6 +10,7 @@
 package org.openmrs.module.patientportal.extension.html;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.openmrs.module.Extension;
@@ -33,7 +34,7 @@ public class AdminList extends AdministrationSectionExt {
 	 * @see org.openmrs.module.web.extension.AdministrationSectionExt#getTitle()
 	 */
 	public String getTitle() {
-		return "patientportal.title";
+		return "Patient Portal Management";
 	}
 	
 	/**
@@ -41,10 +42,11 @@ public class AdminList extends AdministrationSectionExt {
 	 */
 	public Map<String, String> getLinks() {
 		
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> map = new LinkedHashMap<String, String>();
 		
 		map.put("module/patientportal/patientportal.form", "patientportal.title");
 		map.put("patientportal/patientportal.page", "patientportal.refapp.title");
+		map.put("/module/patientportal/addDepartment", "Add department");
 		
 		return map;
 	}
