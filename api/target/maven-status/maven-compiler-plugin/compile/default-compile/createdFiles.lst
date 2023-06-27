@@ -1,6 +1,0 @@
-org/openmrs/module/patientportal/api/PatientportalService.class
-org/openmrs/module/patientportal/api/impl/PatientportalServiceImpl.class
-org/openmrs/module/patientportal/PatientportalConfig.class
-org/openmrs/module/patientportal/PatientportalActivator.class
-org/openmrs/module/patientportal/Item.class
-org/openmrs/module/patientportal/api/dao/PatientportalDao.class
