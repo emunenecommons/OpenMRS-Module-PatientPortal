@@ -11,10 +11,12 @@ package org.openmrs.module.patientportal;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.Patient;
+import org.openmrs.event.Event;
 import org.openmrs.module.BaseModuleActivator;
 
 /**
- * This class contains the logic that is run every time this module is either started or shutdown
+ * This class contains the logic that is run every time this module i mvs either started or shutdown
  */
 public class PatientportalActivator extends BaseModuleActivator {
 	
@@ -25,6 +27,10 @@ public class PatientportalActivator extends BaseModuleActivator {
 	 */
 	public void started() {
 		log.info("Started Patientportal");
+		
+		// Event.subscribe(String.valueOf(Patient.class), new Subscription())
+		Event.subscribe(Patient.class, Event.Action.CREATED.toString(), new Subscription());
+		Event.subscribe(Patient.class, Event.Action.UPDATED.name(), new Subscription());
 	}
 	
 	/**

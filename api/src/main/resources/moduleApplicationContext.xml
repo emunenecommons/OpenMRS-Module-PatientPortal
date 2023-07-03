@@ -55,4 +55,10 @@
             </list>
         </property>
     </bean>
+
+    <bean class="org.openmrs.eventbus.Event">
+        <property name="subscription">
+            <bean class="org.openmrs.module.patientportal.Subscription"></bean>
+        </property>
+    </bean>
 </beans>
