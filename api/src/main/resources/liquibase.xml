@@ -12,18 +12,35 @@
         See http://www.liquibase.org/manual/home#available_database_refactorings
         for a list of supported elements and attributes
     -->
+
+
+	<!--
+        See http://www.liquibase.org/manual/home#available_database_refactorings
+        for a list of supported elements and attributes
+    -->
+    <changeSet author="evans" id="20230524-1">
+        <comment>Create the department table</comment>
+        <createTable tableName="department_department">
+            <column autoIncrement="true" name="department_id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(255)" />
+            <column name="description" type="varchar(255)" />
+            <column name="uuid" type="char(38)" />
+        </createTable>
+    </changeSet>
  
- 	<!-- Uncomment the changeset below if you want to make the Item class persistable, see also Item and PatientportalDaoTest -->
+ 	<!-- Uncomment the changeset below if you want to make the Item class persistable, see also Item and OpenmrsplatformmoduleDaoTest -->
  	<!--
-	<changeSet id="patientportal-2016-08-02-12-21" author="raff">
+	<changeSet id="openmrsplatformmodule-2016-08-02-12-21" author="raff">
 		<preConditions onFail="MARK_RAN">
-			<not><tableExists tableName="patientportal_item"/></not>
+			<not><tableExists tableName="openmrsplatformmodule_item"/></not>
 		</preConditions>
 		<comment>
-			Creating the patientportal_item table
+			Creating the openmrsplatformmodule_item table
 		</comment>
-		<createTable tableName="patientportal_item">
-			<column name="patientportal_item_id" type="int" autoIncrement="true">
+		<createTable tableName="openmrsplatformmodule_item">
+			<column name="openmrsplatformmodule_item_id" type="int" autoIncrement="true">
 				<constraints primaryKey="true" nullable="false"/>
 			</column>
 			<column name="uuid" type="char(38)">
@@ -32,20 +49,8 @@
 			<column name="owner" type="int" />
 			<column name="description" type="varchar(255)" />
 		</createTable>
-        <addForeignKeyConstraint constraintName="patientportal_item_owner_fk" baseTableName="patientportal_item" baseColumnNames="owner"  referencedTableName="users"
+        <addForeignKeyConstraint constraintName="openmrsplatformmodule_item_owner_fk" baseTableName="openmrsplatformmodule_item" baseColumnNames="owner"  referencedTableName="users"
                                  referencedColumnNames="user_id" />
     </changeSet> -->
-
-	<changeSet author="muneneevans" id="20230608-1">
-		<comment>Create Department table</comment>
-		<createTable tableName="department_department">
-			<column autoIncrement="true" name="department_id" type="int">
-				<constraints primaryKey="true" nullable="false" />
-			</column>
-			<column name="name" type="varchar(255)" />
-            <column name="description" type="varchar(255)" />
-            <column name="uuid" type="char(38)" />
-		</createTable>
-	</changeSet>
  
 </databaseChangeLog>

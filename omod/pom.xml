@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openmrs.module</groupId>
-		<artifactId>patientportal</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<artifactId>openmrsplatformmodule</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>patientportal-omod</artifactId>
+	<artifactId>openmrsplatformmodule-omod</artifactId>
 	<packaging>jar</packaging>
-	<name>Patientportal OMOD</name>
-	<description>Omod submodule for Patientportal</description>
+	<name>Openmrsplatformmodule OMOD</name>
+	<description>Omod submodule for Openmrsplatformmodule</description>
 
 	<dependencies>
 		<!-- Add dependency -->
@@ -21,7 +21,7 @@
 		</dependency>
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>patientportal-api</artifactId>
+            <artifactId>openmrsplatformmodule-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 		<dependency>
@@ -34,12 +34,6 @@
 			<artifactId>openmrs-web</artifactId>
 			<scope>provided</scope>
 			<classifier>tests</classifier>
-		</dependency>
-
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>uiframework-api</artifactId>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openmrs.module</groupId>
-		<artifactId>patientportal</artifactId>
+		<artifactId>openmrsplatformmodule</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>patientportal-api</artifactId>
+	<artifactId>openmrsplatformmodule-api</artifactId>
 	<packaging>jar</packaging>
-	<name>Patientportal API</name>
-	<description>API project for Patientportal</description>
+	<name>Openmrsplatformmodule API</name>
+	<description>API project for Openmrsplatformmodule</description>
 
 	<dependencies>
 		<!-- Add dependency -->

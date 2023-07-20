@@ -23,18 +23,18 @@
   		    http://www.springframework.org/schema/util
   		    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-    <context:component-scan base-package="org.openmrs.module.patientportal" />
+    <context:component-scan base-package="org.openmrs.module.openmrsplatformmodule" />
 
-    <!-- Wraps PatientportalService methods in DB transactions and OpenMRS interceptors,
+    <!-- Wraps OpenmrsplatformmoduleService methods in DB transactions and OpenMRS interceptors,
     which set audit info like dateCreated, changedBy, etc.-->
-    <bean id="patientportal.PatientportalService"
+    <bean id="openmrsplatformmodule.OpenmrsplatformmoduleService"
             class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
         <property name="transactionManager">
             <ref bean="transactionManager" />
         </property>
         <property name="target">
-            <bean class="org.openmrs.module.patientportal.api.impl.PatientportalServiceImpl">
-                <property name="dao" ref="patientportal.PatientportalDao" />
+            <bean class="org.openmrs.module.openmrsplatformmodule.api.impl.OpenmrsplatformmoduleServiceImpl">
+                <property name="dao" ref="openmrsplatformmodule.OpenmrsplatformmoduleDao" />
             </bean>
         </property>
         <property name="preInterceptors">
@@ -45,13 +45,13 @@
         </property>
     </bean>
 
-    <!-- Adds PatientportalService to OpenMRS context so it can be accessed
-    calling Context.getService(PatientportalService.class) -->
+    <!-- Adds OpenmrsplatformmoduleService to OpenMRS context so it can be accessed
+    calling Context.getService(OpenmrsplatformmoduleService.class) -->
     <bean parent="serviceContext">
         <property name="moduleService">
             <list>
-                <value>org.openmrs.module.patientportal.api.PatientportalService</value>
-                <ref bean="patientportal.PatientportalService" />
+                <value>org.openmrs.module.openmrsplatformmodule.api.OpenmrsplatformmoduleService</value>
+                <ref bean="openmrsplatformmodule.OpenmrsplatformmoduleService" />
             </list>
         </property>
     </bean>

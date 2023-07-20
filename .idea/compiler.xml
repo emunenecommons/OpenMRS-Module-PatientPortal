@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="patientportal-api" />
-        <module name="patientportal-omod" />
+        <module name="openmrsplatformmodule-omod" />
+        <module name="openmrsplatformmodule-api" />
       </profile>
     </annotationProcessing>
   </component>
